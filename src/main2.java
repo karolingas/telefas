@@ -23,9 +23,22 @@ public class main2 {
                 System.out.println(resultSet.getString("surname"));
 
             }
+
+            statement.executeUpdate("UPDATE students SET name='vaciukas' WHERE id = 1");
+
+            ResultSet resultSet3 = statement.executeQuery("SELECT * from students");
+            while (resultSet3.next()) {
+                System.out.print("|");
+                System.out.println(resultSet3.getInt("id"));
+                System.out.print("|");
+                System.out.println(resultSet3.getString("name"));
+                System.out.print("|");
+                System.out.println(resultSet3.getString("surname"));
+
+            }
             connection.close();
         } catch (Exception e) {
-System.out.println(e);
+            System.out.println(e);
         }
 
 
